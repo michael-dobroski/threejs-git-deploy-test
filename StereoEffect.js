@@ -1,12 +1,12 @@
-
+import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js'
 
 class StereoEffect {
 
 	constructor( renderer ) {
 
-		const _stereo = new StereoCamera();
+		const _stereo = new THREE.StereoCamera();
 		_stereo.aspect = 0.5;
-		const size = new Vector2();
+		const size = new THREE.Vector2();
 
 		this.setEyeSeparation = function ( eyeSep ) {
 
