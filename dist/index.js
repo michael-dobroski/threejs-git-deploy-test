@@ -79,9 +79,9 @@ scene.add( skybox );
 function moveCamera() {
   window.addEventListener('deviceorientation', function(event) {
     const t = document.body.getBoundingClientRect().top;
-    camera.position.z = t * event.alpha;
-    camera.position.x = t * event.beta;
-    camera.rotation.y = t * event.gamma;
+    camera.position.z = t * event.alpha*.1;
+    camera.position.x = t * event.beta*.1;
+    camera.rotation.y = t * event.gamma*.1;
   });
   
 }
