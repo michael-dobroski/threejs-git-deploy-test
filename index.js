@@ -2,6 +2,7 @@ import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js'
 import { OrbitControls } from 'https://unpkg.com/three@0.120.1/examples/jsm/controls/OrbitControls.js'
 import { StereoEffect } from './StereoEffect.js'
 import { GLTFLoader } from 'https://unpkg.com/three@0.120.1/examples/jsm/loaders/GLTFLoader'
+import { DeviceOrientationControls } from 'https://unpkg.com/three@0.120.1/examples/jsm/controls/DeviceOrientationControls.js'
 
 let permissionGranted = false;
 
@@ -23,12 +24,12 @@ function requestAccess() {
   // button.remove();
 }
 
-window.addEventListener('deviceorientation', function(event) {
-  if (permissionGranted == true) {
-    document.getElementById("rotX").innerHTML = event.alpha;
-    // console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
-  }
-});
+// window.addEventListener('deviceorientation', function(event) {
+//   if (permissionGranted == true) {
+//     document.getElementById("rotX").innerHTML = event.alpha;
+//     // console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
+//   }
+// });
 
 document.getElementById("demo").onclick = function() {requestAccess()};
 
@@ -41,9 +42,10 @@ const renderer = new THREE.WebGLRenderer({
 const element = renderer.domElement;
 
 //camera.position.set( 100, 0, 100 );
-const controls = new OrbitControls(camera, element);
+// const controls = new OrbitControls(camera, element);
+const controls = new DeviceOrientationControls(camera, element);
 // controls.addEventListener('change', renderer);
-controls.target.set(-100,0,-100);
+// controls.target.set(-100,0,-100);
 controls.enableZoom = false;
 controls.minDistance = 1;
 controls.maxDistance = 1;
