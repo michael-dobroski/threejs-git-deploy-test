@@ -16,12 +16,19 @@ function requestAccess() {
     if(response == 'granted'){
       permissionGranted = true;
       document.getElementById("foo").innerHTML = "success!";
-      document.getElementById("rotX").innerHTML = rotationX;
+      // document.getElementById("rotX").innerHTML = rotationX;
     }
   })
   .catch(console.error);
   // button.remove();
 }
+
+window.addEventListener('deviceorientation', function(event) {
+  if (permissionGranted == true) {
+    document.getElementById("rotX").innerHTML = event.alpha;
+    // console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
+  }
+});
 
 document.getElementById("demo").onclick = function() {requestAccess()};
 
