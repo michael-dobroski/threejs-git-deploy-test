@@ -3,6 +3,24 @@ import { OrbitControls } from 'https://unpkg.com/three@0.120.1/examples/jsm/cont
 import { StereoEffect } from './StereoEffect.js'
 import { GLTFLoader } from 'https://unpkg.com/three@0.120.1/examples/jsm/loaders/GLTFLoader'
 
+let permissionGranted = false;
+
+if(typeof(DeviceOrientationEvent)!== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
+  document.getElementById("foo").innerHTML = "ios device";
+} else {
+  document.getElementById("foo").innerHTML = "non-ios device";
+}
+
+function requestAccess() {
+  DeviceOrientationEvent.requestPermission().then(response => {
+    if(response == 'granted'){
+      permissionGranted = true;
+    }
+  })
+  .catch(console.error);
+  button.remove();
+}
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({
@@ -52,10 +70,10 @@ scene.add( skybox );
 // moveCamera();
 function animate(){
   
-    requestAnimationFrame(animate);
-    // hoverSpheres();
-    effect.render(scene, camera);
+  requestAnimationFrame(animate);
+  // hoverSpheres();
+  effect.render(scene, camera);
     
-  }
+}
   
-  animate();
+animate();
