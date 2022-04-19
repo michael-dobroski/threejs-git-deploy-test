@@ -15,6 +15,8 @@ function requestAccess() {
   DeviceOrientationEvent.requestPermission().then(response => {
     if(response == 'granted'){
       permissionGranted = true;
+      document.getElementById("foo").innerHTML = "success!";
+      document.getElementById("rotX").innerHTML = rotationX;
     }
   })
   .catch(console.error);
