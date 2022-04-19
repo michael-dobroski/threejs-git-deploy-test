@@ -76,7 +76,20 @@ let skyboxGeo = new THREE.BoxGeometry( 1000, 1000, 1000);
 let skybox = new THREE.Mesh( skyboxGeo, materialArray );
 scene.add( skybox );
 
-// moveCamera();
+function moveCamera() {
+  window.addEventListener('deviceorientation', function(event) {
+    const t = document.body.getBoundingClientRect().top;
+    camera.position.z = t * event.alpha;
+    camera.position.x = t * event.beta;
+    camera.rotation.y = t * event.gamma;
+  });
+  
+}
+
+
+moveCamera();
+
+moveCamera();
 function animate(){
   
   requestAnimationFrame(animate);
