@@ -41,7 +41,7 @@ const element = renderer.domElement;
 //camera.position.set( 100, 0, 100 );
 const controls = new OrbitControls(camera, element);
 // controls.addEventListener('change', renderer);
-controls.target.set(alpha,beta,gamma);
+controls.target.set(-100,0,-100);
 controls.enableZoom = false;
 controls.minDistance = 1;
 controls.maxDistance = 1;
