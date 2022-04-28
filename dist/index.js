@@ -4,6 +4,8 @@ import { StereoEffect } from './StereoEffect.js'
 import { GLTFLoader } from 'https://unpkg.com/three@0.120.1/examples/jsm/loaders/GLTFLoader'
 import { DeviceOrientationControls } from 'https://unpkg.com/three@0.120.1/examples/jsm/controls/DeviceOrientationControls.js'
 
+screen.orientation.lock('landscape');
+
 let permissionGranted = false;
 
 // if(typeof(DeviceOrientationEvent)!== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
