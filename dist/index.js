@@ -18,11 +18,11 @@ function requestAccess() {
 
 document.getElementById("gyro").onclick = function() {requestAccess()};
 
-document.getElementById("foo").innerHTML = window.innerWidth;
-document.getElementById("foo2").innerHTML = window.innerHeight;
+// document.getElementById("foo").innerHTML = window.innerWidth;
+// document.getElementById("foo2").innerHTML = window.innerHeight;
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerHeight / window.innerWidth, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
 });
@@ -40,7 +40,7 @@ controls.maxDistance = 1;
 controls.update();
 
 const effect = new StereoEffect( renderer );
-effect.setSize( window.innerWidth, window.innerHeight );
+effect.setSize( window.innerHeight, window.innerWidth );
 effect.render( scene, camera );
 
 // Loading images into VR environment
