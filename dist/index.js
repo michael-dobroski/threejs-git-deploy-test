@@ -74,6 +74,16 @@ function moveCamera() {
   
 }
 
+document.addEventListener("orientationchange", function(event){
+  switch(window.orientation) 
+  {  
+    case -90: case 90:
+      document.getElementById("orient").innerHTML = "landscape";
+      break; 
+    default:
+      document.getElementById("orient").innerHTML = "portrait";
+  }
+});
 
 moveCamera();
 
