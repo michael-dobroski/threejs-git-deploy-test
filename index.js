@@ -18,6 +18,9 @@ function requestAccess() {
 
 document.getElementById("gyro").onclick = function() {requestAccess()};
 
+document.getElementById("foo").innerHTML = window.innerWidth;
+document.getElementById("foo2").innerHTML = window.innerHeight;
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({
@@ -73,17 +76,6 @@ function moveCamera() {
   });
   
 }
-
-document.addEventListener("orientationchange", function(event){
-  switch(window.orientation) 
-  {  
-    case -90: case 90:
-      document.getElementById("orient").innerHTML = "landscape";
-      break; 
-    default:
-      document.getElementById("orient").innerHTML = "portrait";
-  }
-});
 
 moveCamera();
 
