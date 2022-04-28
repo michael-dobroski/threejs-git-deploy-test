@@ -4,15 +4,7 @@ import { StereoEffect } from './StereoEffect.js'
 import { GLTFLoader } from 'https://unpkg.com/three@0.120.1/examples/jsm/loaders/GLTFLoader'
 import { DeviceOrientationControls } from 'https://unpkg.com/three@0.120.1/examples/jsm/controls/DeviceOrientationControls.js'
 
-screen.orientation.lock('landscape');
-
 let permissionGranted = false;
-
-// if(typeof(DeviceOrientationEvent)!== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
-//   document.getElementById("foo").innerHTML = "ios device";
-// } else {
-//   document.getElementById("foo").innerHTML = "non-ios device";
-// }
 
 function requestAccess() {
   DeviceOrientationEvent.requestPermission().then(response => {
@@ -23,10 +15,6 @@ function requestAccess() {
   })
   .catch(console.error);
 }
-
-// window.addEventListener('deviceorientation', function(event) {
-//   console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
-// });
 
 document.getElementById("gyro").onclick = function() {requestAccess()};
 
