@@ -16,19 +16,17 @@ function requestAccess() {
   DeviceOrientationEvent.requestPermission().then(response => {
     if(response == 'granted'){
       permissionGranted = true;
-      document.getElementById("foo").innerHTML = "success!";
-      // document.getElementById("rotX").innerHTML = rotationX;
+      document.getElementById("gyro").remove();
     }
   })
   .catch(console.error);
-  // button.remove();
 }
 
 // window.addEventListener('deviceorientation', function(event) {
 //   console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
 // });
 
-document.getElementById("demo").onclick = function() {requestAccess()};
+document.getElementById("gyro").onclick = function() {requestAccess()};
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
