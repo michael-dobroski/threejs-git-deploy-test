@@ -6,11 +6,11 @@ import { DeviceOrientationControls } from 'https://unpkg.com/three@0.120.1/examp
 
 let permissionGranted = false;
 
-if(typeof(DeviceOrientationEvent)!== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
-  document.getElementById("foo").innerHTML = "ios device";
-} else {
-  document.getElementById("foo").innerHTML = "non-ios device";
-}
+// if(typeof(DeviceOrientationEvent)!== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
+//   document.getElementById("foo").innerHTML = "ios device";
+// } else {
+//   document.getElementById("foo").innerHTML = "non-ios device";
+// }
 
 function requestAccess() {
   DeviceOrientationEvent.requestPermission().then(response => {
@@ -24,9 +24,9 @@ function requestAccess() {
   // button.remove();
 }
 
-window.addEventListener('deviceorientation', function(event) {
-  console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
-});
+// window.addEventListener('deviceorientation', function(event) {
+//   console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
+// });
 
 document.getElementById("demo").onclick = function() {requestAccess()};
 
