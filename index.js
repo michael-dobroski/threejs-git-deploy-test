@@ -70,17 +70,22 @@ scene.add( skybox );
 function moveCamera() {
   window.addEventListener('deviceorientation', function(event) {
     const t = document.body.getBoundingClientRect().top;
-    camera.rotation.z = event.alpha*.008;
+    camera.rotation.z = -event.gamma*.008;
     camera.rotation.x = event.beta*.008;
-    camera.rotation.y = event.gamma*.008;
+    camera.rotation.y = event.alpha*.008;
+    console.log(event.gamma);
+    console.log(event.beta);
+    console.log(event.alpha);
   });
   
 }
 
 moveCamera();
 
-moveCamera();
+
 function animate(){
+
+
   
   requestAnimationFrame(animate);
   // hoverSpheres();
