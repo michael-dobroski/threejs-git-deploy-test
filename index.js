@@ -76,9 +76,9 @@ function moveCamera() {
 
     var gamma = THREE.Math.degToRad(event.gamma);
 
-    camera.rotation.z = gamma*.008;
-    camera.rotation.x = beta*.008;
-    camera.rotation.y = alpha*.008;
+    camera.rotation.z = gamma;
+    camera.rotation.x = beta;
+    camera.rotation.y = alpha;
     console.log("gamma: ", gamma, "beta: ",beta, "alpha :", alpha);
     
   });
