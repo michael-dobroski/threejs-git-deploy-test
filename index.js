@@ -73,9 +73,8 @@ function moveCamera() {
     camera.rotation.z = -event.gamma*.008;
     camera.rotation.x = event.beta*.008;
     camera.rotation.y = event.alpha*.008;
-    console.log(event.gamma);
-    console.log(event.beta);
-    console.log(event.alpha);
+    console.log(event.gamma, event.beta, event.alpha);
+    
   });
   
 }
