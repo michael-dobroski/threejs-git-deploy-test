@@ -74,8 +74,8 @@ function moveCamera() {
     var deviceXvalue = Math.round(event.beta);  // In degree in the range [-180,180]
     var deviceYvalue = Math.round(event.gamma); // In degree in the range [-90,90]
 
-    deviceY = deviceXvalue;
-    deviceX = deviceYvalue * -1;
+    var deviceY = deviceXvalue;
+    var deviceX = deviceYvalue * -1;
     camera.position.x += deviceX * .025; 
     camera.position.y += deviceY * .0125; 
     
