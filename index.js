@@ -71,10 +71,10 @@ function moveCamera() {
   window.addEventListener('deviceorientation', function(event) {
     const t = document.body.getBoundingClientRect().top;
     
-    camera.rotation.z = THREE.Math.degToRad( event.alpha );
-    camera.rotation.x = THREE.Math.degToRad( event.gamma );
-    camera.rotation.y = THREE.Math.degToRad( event.beta );
-    console.log("gamma: ", THREE.Math.degToRad( event.gamma ), "beta: ",-THREE.Math.degToRad( event.beta ), "alpha :", -THREE.Math.degToRad( event.alpha ));
+    camera.rotation.z = THREE.Math.degToRad( event.beta );
+    camera.rotation.x = THREE.Math.degToRad( event.alpha );
+    camera.rotation.y = THREE.Math.degToRad( event.gamma );
+    console.log("gamma: ", THREE.Math.degToRad( event.gamma ), "beta: ",THREE.Math.degToRad( event.beta ), "alpha :", THREE.Math.degToRad( event.alpha ));
     
   });
   
