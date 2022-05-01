@@ -74,7 +74,7 @@ function moveCamera() {
     camera.rotation.z = -THREE.Math.degToRad( event.alpha );
     camera.rotation.x = THREE.Math.degToRad( event.gamma );
     camera.rotation.y = THREE.Math.degToRad( event.beta );
-    console.log("gamma: ", THREE.Math.degToRad( event.alpha ), "beta: ",-THREE.Math.degToRad( event.beta ), "alpha :", -THREE.Math.degToRad( event.gamma ));
+    console.log("gamma: ", THREE.Math.degToRad( event.gamma ), "beta: ",-THREE.Math.degToRad( event.beta ), "alpha :", -THREE.Math.degToRad( event.alpha ));
     
   });
   
