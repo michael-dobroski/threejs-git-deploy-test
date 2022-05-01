@@ -70,10 +70,16 @@ scene.add( skybox );
 function moveCamera() {
   window.addEventListener('deviceorientation', function(event) {
     const t = document.body.getBoundingClientRect().top;
-    camera.rotation.z = -event.gamma*.008;
-    camera.rotation.x = event.beta*.008;
-    camera.rotation.y = event.alpha*.008;
-    console.log("gamma: ", event.gamma, "beta: ",event.beta, "alpha :", event.alpha);
+    var alpha = THREE.Math.degToRad(event.alpha);
+
+    var beta = THREE.Math.degToRad(event.beta);
+
+    var gamma = THREE.Math.degToRad(event.gamma);
+
+    camera.rotation.z = gamma*.008;
+    camera.rotation.x = beta*.008;
+    camera.rotation.y = alpha*.008;
+    console.log("gamma: ", gamma, "beta: ",beta, "alpha :", alpha);
     
   });
   
