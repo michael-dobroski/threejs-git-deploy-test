@@ -71,13 +71,10 @@ function moveCamera() {
   window.addEventListener('deviceorientation', function(event) {
     const t = document.body.getBoundingClientRect().top;
     
-    var deviceXvalue = Math.round(event.beta);  // In degree in the range [-180,180]
-    var deviceYvalue = Math.round(event.gamma); // In degree in the range [-90,90]
- 
-    var deviceY = deviceXvalue;
-    var deviceX = deviceYvalue * -1;
-    camera.position.x += deviceX * .025; 
-    camera.position.y += deviceY * .0125; 
+    camera.rotation.z = THREE.Math.degToRad( event.alpha );
+    camera.rotation.x = -THREE.Math.degToRad( event.beta );
+    camera.rotation.y = -THREE.Math.degToRad( event.gamma );
+    console.log("gamma: ", THREE.Math.degToRad( event.alpha ), "beta: ",-THREE.Math.degToRad( event.beta ), "alpha :", -THREE.Math.degToRad( event.gamma ));
     
   });
   
