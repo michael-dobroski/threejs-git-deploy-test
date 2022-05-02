@@ -79,7 +79,7 @@ function moveCamera() {
 
  
       camera.rotation.z = beta;
-      camera.rotation.x = gamma;
+      camera.rotation.x = -gamma;
       camera.rotation.y = alpha;
 
 
