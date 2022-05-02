@@ -83,15 +83,15 @@ function moveCamera() {
       camera.rotation.y = alpha;
 
     }
-    else{
-      camera.rotation.y = alpha-Math.PI;
-      camera.rotation.z = Math.PI-beta;
+    // else{
+    //   camera.rotation.y = alpha-Math.PI;
+    //   camera.rotation.z = Math.PI-beta;
 
-    }
+    // }
     
 
 
-    console.log("gamma: ", THREE.Math.degToRad( event.gamma ), "beta: ",THREE.Math.degToRad( event.beta ), "alpha :", THREE.Math.degToRad( event.alpha ));
+    console.log("gamma: ", ( event.gamma ), "beta: ",( event.beta ), "alpha :", ( event.alpha ));
     
   });
   
