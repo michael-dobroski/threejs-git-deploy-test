@@ -77,10 +77,14 @@ function moveCamera() {
     let gamma = THREE.Math.degToRad( event.gamma ) -Math.PI/2;
     let alpha = THREE.Math.degToRad( event.alpha );
 
-    if (gamma != Math.PI/2 || gamma != -Math.PI/2 || beta != Math.PI || beta != -Math.PI || alpha != 0 || alpha != 2 * Math.PI){
+    if (gamma <= Math.PI/2 || gamma >= -Math.PI/2 || beta != Math.PI || beta != -Math.PI || alpha != 0 || alpha != 2 * Math.PI){
       camera.rotation.z = beta;
       camera.rotation.x = gamma;
       camera.rotation.y = alpha;
+
+    }
+    else{
+      camera.rotation.z = beta-Math.PI;
 
     }
     
