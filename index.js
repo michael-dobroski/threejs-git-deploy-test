@@ -70,10 +70,22 @@ scene.add( skybox );
 function moveCamera() {
   window.addEventListener('deviceorientation', function(event) {
     const t = document.body.getBoundingClientRect().top;
+
     
-    camera.rotation.z = THREE.Math.degToRad( event.beta );
-    camera.rotation.x = THREE.Math.degToRad( event.gamma ) -1.55;
-    camera.rotation.y = THREE.Math.degToRad( event.alpha );
+    
+    let beta = THREE.Math.degToRad( event.beta );
+    let gamma = THREE.Math.degToRad( event.gamma ) -1.55;
+    let alpha = THREE.Math.degToRad( event.alpha );
+
+    if (gamma != Math.PI/2 || gamma != -Math.PI/2 || beta != Math.PI || beta != -Math.PI || alpha != 0 || alpha != 2 * Math.PI){
+      camera.rotation.z = beta;
+      camera.rotation.x = gamma;
+      camera.rotation.y = alpha;
+
+    }
+    
+
+
     console.log("gamma: ", THREE.Math.degToRad( event.gamma ), "beta: ",THREE.Math.degToRad( event.beta ), "alpha :", THREE.Math.degToRad( event.alpha ));
     
   });
