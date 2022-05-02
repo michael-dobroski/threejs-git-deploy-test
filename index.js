@@ -29,7 +29,7 @@ const renderer = new THREE.WebGLRenderer({
 
 const element = renderer.domElement;
 
-//camera.position.set( 100, 0, 100 );
+camera.position.set( 100, 0, 100 );
 const controls = new OrbitControls(camera, element);
 // controls.addEventListener('change', renderer);
 controls.target.set(-100,0,-100);
@@ -71,9 +71,9 @@ function moveCamera() {
   window.addEventListener('deviceorientation', function(event) {
     const t = document.body.getBoundingClientRect().top;
     
-    camera.rotation.z = THREE.Math.degToRad( event.beta );
+    camera.rotation.z = THREE.Math.degToRad( event.alpha );
     camera.rotation.x = -THREE.Math.degToRad( event.gamma );
-    camera.rotation.y = THREE.Math.degToRad( event.alpha );
+    camera.rotation.y = THREE.Math.degToRad( event.beta );
     console.log("gamma: ", THREE.Math.degToRad( event.gamma ), "beta: ",THREE.Math.degToRad( event.beta ), "alpha :", THREE.Math.degToRad( event.alpha ));
     
   });
