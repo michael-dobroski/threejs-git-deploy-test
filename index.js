@@ -83,10 +83,11 @@ function moveCamera() {
       camera.rotation.y = alpha;
 
     }
-    // else{
-    //   camera.rotation.z = beta-Math.PI;
+    else{
+      camera.rotation.y = alpha-Math.PI;
+      camera.rotation.z = Math.PI-beta;
 
-    // }
+    }
     
 
 
