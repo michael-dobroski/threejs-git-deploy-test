@@ -73,8 +73,8 @@ function moveCamera() {
 
     
     
-    let beta = THREE.Math.degToRad( event.beta );
-    let gamma = THREE.Math.degToRad( event.gamma );
+    let beta =  THREE.Math.degToRad( event.beta );
+    let gamma = -THREE.Math.degToRad( event.gamma );
     let alpha = THREE.Math.degToRad( event.alpha );
 
  
